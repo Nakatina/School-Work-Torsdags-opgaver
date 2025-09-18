@@ -4,7 +4,7 @@ void setup() {
   printPartOfWord("københavn", 0, 3);
   
 //for de fire sidste bruger vi substring(word.length() -4,wordlength())
-
+  //2.d
   printPartOfWord("København", "København".length() - 4, "københavn".length());
   
   // Test 2.e – negative værdier
