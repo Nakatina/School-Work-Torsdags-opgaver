@@ -17,8 +17,31 @@ public class Main{
 	//prøver at hive GameMenu frem	
 	
 		GameMenu gameMenu = new GameMenu(actions);
-
-		gameMenu.displayMenu();
+		String userChoice = gameMenu.promptUser();
+		int actionNumber = Integer.parseInt(userChoice);
+		doAction(actionNumber);
+	}
+		//har taget den nedre kode ud af spil da jeg skal lave en do action Metode
+		//gameMenu.displayMenu();
+	public static void doAction(int action){
+		switch (action){
+			case 1:
+				System.out.println("Starting the Game now!");
+				break;
+			case 2:
+				System.out.println("Fetching previously saved game data");
+				break;
+			case 3:
+				System.out.println("Game Paused");
+				break;
+			case 4:
+				System.out.println("Ending Game");
+				break;
+			default:
+				System.out.println("Invallid vhoice. Please enter a number between 1 and 4");
+			}
+	
+	
 	
 	}
 
