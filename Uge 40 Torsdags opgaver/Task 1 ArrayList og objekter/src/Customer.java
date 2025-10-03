@@ -33,7 +33,10 @@ public class Customer {
     }
     //laver nogle simple setters
     public void setFirstName(){
+        if(firstName != null && !firstName.equals("") && firstName.length() >1){
+
         this.firstName = firstName;
+    }
     }
     public void setUserName(){
         this.userName = userName;
