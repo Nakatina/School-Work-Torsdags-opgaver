@@ -11,7 +11,7 @@ public class Main {
         ArrayList<String> menu = myCafe.getCoffeeMenu();
         //printer listen med kaffe! Velbekomme.
         for(String coffee : menu){
-            System.out.println(coffee);
+            System.out.println("- " + coffee);
         }
 
     }

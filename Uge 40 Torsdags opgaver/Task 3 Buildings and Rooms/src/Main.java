@@ -5,15 +5,15 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 //laver de tre rum vi skal bruge 3.g
-        Room room1 = new Room(2,1);
-        Room room2 = new Room(5,4);
-        Room room3 = new Room(3,2);
+        Room stue = new Room(2,1);
+        Room bad = new Room(5,4);
+        Room soveVærelse = new Room(3,2);
 
         //de rooms vi har lavet skal ind i en liste
         List<Room> roomList = new ArrayList<>();
-        roomList.add(room1);
-        roomList.add(room2);
-        roomList.add(room3);
+        roomList.add(stue);
+        roomList.add(bad);
+        roomList.add(soveVærelse);
 
         //så skal vi have en bygning med rummene 3.i
         Building normalBuilding = new Building(roomList, 2);
@@ -28,8 +28,8 @@ public class Main {
         System.out.println("Is normal building normal? " + isNormal(normalBuilding));
 
         //test med en ikke normal building
-        Building abnormalBuilding = new Building(roomList, 10);
-        System.out.println("Is abnormal building normal?" + isNormal(abnormalBuilding));
+        Building unormalBuilding = new Building(roomList, 10);
+        System.out.println("Is abnormal building normal?" + isNormal(unormalBuilding));
 
 
         }
