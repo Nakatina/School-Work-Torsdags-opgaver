@@ -21,6 +21,6 @@ public abstract class Title {
             default -> 1;
         };
     }
-
+//her laves den abstracte motode, der skal implementers i subklasserne. også kaldet Polymorfi
     public abstract double calculatePoints();
 }
