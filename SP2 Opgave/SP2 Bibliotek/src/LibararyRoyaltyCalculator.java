@@ -6,6 +6,7 @@ public class LibararyRoyaltyCalculator {
 
         //1. Printet bog: Ringenes herre
         PrintedBook pb1 = new PrintedBook("Ringenes Herre - Eventyret om Ringen","SKØN",275000,656);
+        //tog udgangs punkt i bøger solgt i Danmark, og glemte at det er hvor mange der bliver udlånt af et bibliotek! kan nemt endres.
 
         //lydbogen
         AudioBook ab1 = new AudioBook("Ringenes Herre - Eventyret om Ringen","SKØN",164000,1267);
