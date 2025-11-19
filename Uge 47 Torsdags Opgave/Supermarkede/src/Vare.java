@@ -5,24 +5,24 @@ import java.util.Map;
 public class Vare {
     private String ean;
     private String navn;
-    private LocalDate prisAendringData;
+    private LocalDate prisAendringDato;
     private double pris;
     private double maengde;
     private String enhed;
 
 
-    public Vare(String ean, String navn, LocalDate prisAendringData, double pris, double maengde, String enhed) {
+    public Vare(String ean, String navn, LocalDate prisAendringDato, double pris, double maengde, String enhed) {
         this.ean = ean;
         this.navn = navn;
-        this.prisAendringData = prisAendringData;
+        this.prisAendringDato = prisAendringDato;
         this.pris = pris;
         this.maengde = maengde;
         this.enhed = enhed;
     }
 
-    Map<String, Vare> alleVarer = new HashMap<>();
+    /*Map<String, Vare> alleVarer = new HashMap<>();
     Map<String, Vare> tilbudsVarer = new HashMap<>();
-
+*/
 
 
 
