@@ -1,6 +1,4 @@
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Vare {
     private String ean;
@@ -36,8 +34,8 @@ public class Vare {
         return navn;
     }
 
-    public LocalDate getPrisAendringData() {
-        return prisAendringData;
+    public LocalDate getPrisAendringDato() {
+        return prisAendringDato;
     }
 
     public double getPris() {
