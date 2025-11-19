@@ -1,5 +1,3 @@
-package data;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -20,12 +18,14 @@ public class CSVLoader {
                 String[] cols = line.split(";"); // eller "," afhængigt af filen
 
                 // Hent værdierne
+                // id;name;priceDate;price;isBudgetBrand;quantity;unit;isWeighted;isBio;isAvailable
                 String ean = cols[0];
                 String navn = cols[1];
                 LocalDate dato = LocalDate.parse(cols[2]);
                 double pris = Double.parseDouble(cols[3]);
-                double maengde = Double.parseDouble(cols[4]);
-                String enhed = cols[5];
+
+                double maengde = Double.parseDouble(cols[5]);
+                String enhed = cols[6];
 
                 // Lav vare-objektet
                 Vare v = new Vare(ean, navn, dato, pris, maengde, enhed);
