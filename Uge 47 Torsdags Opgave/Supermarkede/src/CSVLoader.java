@@ -12,10 +12,10 @@ public class CSVLoader {
 
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
 
-            String line = br.readLine(); // første linje = header → spring over
+            String line = br.readLine(); // første linje = header → spring over Der for kan vi godt lide BufferedReader :D
 
             while ((line = br.readLine()) != null) {
-                String[] cols = line.split(";"); // eller "," afhængigt af filen
+                String[] cols = line.split(";"); // Hader at der ikke er ens rettet med ";" eller "," afhængigt af csv filen Denne gang er det ; der spitter.
 
                 // Hent værdierne
                 // id;name;priceDate;price;isBudgetBrand;quantity;unit;isWeighted;isBio;isAvailable
