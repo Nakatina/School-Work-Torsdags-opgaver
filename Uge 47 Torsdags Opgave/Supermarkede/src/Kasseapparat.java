@@ -16,39 +16,48 @@ public class Kasseapparat {
 
             Map<String, Integer> tæller = new HashMap<>();
 
-            // Gruppér varerne
+            // Gruppér varerne baseret på EAN nummer. skulle nok virke?
             for (Vare v : kurv) {
                 tæller.merge(v.getEan(), 1, Integer::sum);
             }
 
             double total = 0;
+            double totalRabat = 0;
 
             System.out.println("----------------------------------");
 
             // For hver varelinje i tælleren
-            for (String ean : tæller.keySet()) {
+        for (String ean : tæller.keySet()) {
 
-                int antal = tæller.get(ean);
-                Vare normal = alleVarer.get(ean);
-                Vare tilbud = tilbudsVarer.get(ean);
+            int antal = tæller.get(ean);
+            Vare normal = alleVarer.get(ean);
+            Vare tilbud = tilbudsVarer.get(ean);
 
-                double pris = (tilbud != null) ? tilbud.getPris() : normal.getPris();
-                double linjeTotal = antal * pris;
+            // Udskriv varelinjen
+            printLinje(normal, tilbud, antal);
 
-                printLinje(normal, tilbud, antal);
+            double normalPris = normal.getPris();
+            double tilbudPris = (tilbud != null ? tilbud.getPris() : normalPris);
 
-                total += linjeTotal;
-            }
+            double normalTotal = antal * normalPris;
+            double tilbudTotal = antal * tilbudPris;
+
+            total += tilbudTotal;
+            totalRabat += (normalTotal - tilbudTotal);
+        }
 
             // Momsberegning (25 % i Danmark)
             double moms = total * 0.20; // hvis total er INKL moms
             // Hvis total er EKSKL moms → brug 0.25 men det giver sig selv
 
-            System.out.println("----------------------------------");
-            System.out.printf("TOTAL: %.2f\n", total);
-            System.out.printf("MOMS:  %.2f\n", moms);
-            System.out.println("----------------------------------");
-            System.out.println("Tak for dit køb!");
+        System.out.println("--------------------------------------");
+        System.out.printf("SPARET I ALT:  -%.2f kr\n", totalRabat);
+        System.out.println("--------------------------------------");
+        System.out.printf("MOMS:           %.2f kr\n", moms);
+        System.out.printf("TOTAL:          %.2f kr\n", total);
+        System.out.println("--------------------------------------");
+        System.out.println("Tak for dit køb!");
+        System.out.println("======================================");
 
     }
 
