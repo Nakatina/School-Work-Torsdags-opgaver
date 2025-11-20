@@ -49,4 +49,13 @@ public class Vare {
     public String getEnhed() {
         return enhed;
     }
+    public void setPris(double pris) {
+        this.pris = pris;
+    }
+
+    @Override
+    public String toString() {
+        return navn + " (" + ean + ") - " + pris + " kr (" + maengde + " " + enhed + ")";
+    }
+
 }
