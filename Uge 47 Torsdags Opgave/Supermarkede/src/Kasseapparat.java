@@ -35,7 +35,7 @@ public class Kasseapparat {
                 double pris = (tilbud != null) ? tilbud.getPris() : normal.getPris();
                 double linjeTotal = antal * pris;
 
-                //System.out.println(normal tilbud);
+                printLinje(normal, tilbud, antal);
 
                 total += linjeTotal;
             }
@@ -51,6 +51,8 @@ public class Kasseapparat {
             System.out.println("Tak for dit køb!");
 
     }
+
+
     private void printLinje(Vare normal, Vare tilbud, int antal) {
 
         System.out.println(normal.getNavn());
