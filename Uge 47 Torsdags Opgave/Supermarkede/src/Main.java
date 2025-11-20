@@ -6,18 +6,24 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Map<String, Vare> alle = CSVLoader.load("data/varer.csv");
+        Map<String, Vare> alleVarer = CSVLoader.load("data/varer.csv");
         Map<String, Vare> tilbud = CSVLoader.load("data/tilbud.csv");
 
+        System.out.println("Antall varer indlæst: " + alleVarer.size());
+        System.out.println("Antal tilbud indlæst: " + tilbud.size());
+        System.out.println();
+
         // Robot får alle varer og laver en tilfældig kurv
-     Robot robot = new Robot();
-     ArrayList<Vare> kurv = new ArrayList<>();
-     robot.fyldIKurv(kurv);
-        System.out.println(kurv);
+        Robot robot = new Robot();
 
-       /* Kasseapparat kasse = new Kasseapparat(alle, tilbud);
+        Collection<Vare> kurv = robot.fyldIKurv(alleVarer.values());
 
-        kasse.printBon(kurv);*/
+        System.out.println("Robot lavede kurv med " + kurv.size() + " varer.");
+        System.out.println();
+
+       Kasseapparat kasse = new Kasseapparat(alleVarer, tilbud);
+
+        kasse.printBon(kurv);
 
     }
 }
